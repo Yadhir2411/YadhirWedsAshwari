@@ -17,30 +17,23 @@
   <source src="Love.mp3" type="audio/mpeg">
 </audio>
 
-<script>
-  const audio = document.getElementById('bg-music');
+ <script>
+      const audio = document.getElementById('bg-music');
 
-  function attachAudio() {
-    const btn = document.querySelector('button');
-    if (!btn) {
-      setTimeout(attachAudio, 200);
-      return;
-    }
-    btn.addEventListener('click', () => {
-      audio.volume = 0;
-      audio.play().then(() => {
-        let vol = 0;
-        const fade = setInterval(() => {
-          vol = Math.min(vol + 0.05, 0.85);
-          audio.volume = vol;
-          if (vol >= 0.85) clearInterval(fade);
-        }, 100);
-      }).catch(() => {});
-    }, { once: true });
-  }
+      function attachAudio() {
+        const btn = document.querySelector('button');
+        if (!btn) {
+          setTimeout(attachAudio, 200);
+          return;
+        }
+        btn.addEventListener('click', () => {
+          audio.volume = 1;
+          audio.play().catch(() => {});
+        }, { once: true });
+      }
 
-  document.addEventListener('DOMContentLoaded', attachAudio);
-</script>
+      document.addEventListener('DOMContentLoaded', attachAudio);
+    </script>
 ```
 
   </body>
