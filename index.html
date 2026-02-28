@@ -5,37 +5,51 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Yadhir & Ashwari - Wedding Entry</title>
-    <script type="module" crossorigin src="/YadhirWedsAshwari/index-C-SHUNnF.js"></script>
-    <link rel="stylesheet" crossorigin href="/YadhirWedsAshwari/index-B7mZLYip.css">
+    <script type="module" crossorigin src="./assets/index-C-SHUNnF.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-B7mZLYip.css">
   </head>
   <body>
     <div id="root"></div>
 
 ```
+<style>
+  .transition-title {
+    color: #6b1a1a !important;
+    font-size: 4rem !important;
+    font-weight: 900 !important;
+    text-shadow:
+      0 0 30px rgba(255,255,255,0.9),
+      0 2px 4px rgba(0,0,0,0.3),
+      0 4px 24px rgba(107,26,26,0.4) !important;
+    letter-spacing: 0.08em !important;
+  }
+  @media (max-width: 768px) { .transition-title { font-size: 2.8rem !important; } }
+  @media (max-width: 480px) { .transition-title { font-size: 2.2rem !important; } }
+</style>
+
 <!-- Place your MP3 in the same folder as index.html and name it song.mp3 -->
 <audio id="bg-music" loop preload="auto">
-  <source src="Love.mp3" type="audio/mpeg">
+  <source src="song.mp3" type="audio/mpeg">
 </audio>
 
- <script>
-      const audio = document.getElementById('bg-music');
+<script>
+  const audio = document.getElementById('bg-music');
 
-      function attachAudio() {
-        const btn = document.querySelector('button');
-        if (!btn) {
-          setTimeout(attachAudio, 200);
-          return;
-        }
-        btn.addEventListener('click', () => {
-          audio.volume = 1;
-          audio.play().catch(() => {});
-        }, { once: true });
-      }
+  function attachAudio() {
+    const btn = document.querySelector('button');
+    if (!btn) {
+      setTimeout(attachAudio, 200);
+      return;
+    }
+    btn.addEventListener('click', () => {
+      audio.volume = 1;
+      audio.play().catch(() => {});
+    }, { once: true });
+  }
 
-      document.addEventListener('DOMContentLoaded', attachAudio);
-    </script>
+  document.addEventListener('DOMContentLoaded', attachAudio);
+</script>
 ```
 
   </body>
 </html>
-
